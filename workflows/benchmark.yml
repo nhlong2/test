@@ -1,0 +1,5 @@
+benchmark:
+  script:
+    - ./setup.sh
+    - ./speedtest.sh
+    - ./benchmark.sh

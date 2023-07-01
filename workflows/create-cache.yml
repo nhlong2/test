@@ -1,0 +1,8 @@
+cache:
+  key: create-cache-default
+  paths:
+    - cache
+
+create-cache:
+  script:
+    - ./create-cache.sh
