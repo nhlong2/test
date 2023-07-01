@@ -1,5 +1,6 @@
 benchmark:
   script:
+    - ./info.sh
     - ./setup.sh
     - ./speedtest.sh
     - ./benchmark.sh
