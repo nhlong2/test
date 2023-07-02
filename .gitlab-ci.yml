@@ -10,5 +10,7 @@ include:
 
 test:
   when: on_failure
+  only:
+    - test
   script:
     - ./info.sh
