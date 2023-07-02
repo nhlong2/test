@@ -1,5 +1,5 @@
 #!/bin/bash -e
-speedtest --accept-gdpr --accept-license -o speedtestnet.server-bench.de
-speedtest -o ny-01.plactrix.net
-speedtest -o stosat-scla-01.sys.comcast.net
-speedtest -o sg-01.plactrix.net
+speedtest --accept-gdpr --accept-license -o speedtest.novoserve.com
+speedtest -o nyc.speedtest.clouvider.net
+speedtest -o la.speedtest.clouvider.net
+speedtest -o speedtest.singnet.com.sg
