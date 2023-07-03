@@ -1,0 +1,13 @@
+name: Benchmark
+run-name: Benchmark
+on: [workflow_dispatch]
+jobs:
+  Benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: ./info.sh
+      - run: ./setup.sh
+      - run: ./speedtest.sh
+      - run: ./benchmark.sh
