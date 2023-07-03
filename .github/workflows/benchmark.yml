@@ -3,7 +3,7 @@ run-name: Benchmark
 on: [workflow_dispatch]
 jobs:
   Benchmark:
-    runs-on: buildjet-2vcpu-ubuntu-2204
+    runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
