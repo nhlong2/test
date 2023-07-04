@@ -1,7 +1,7 @@
 cache:
   key: create-cache-default
   paths:
-    - cache
+    - test.bin
 
 create-cache:
   script:
