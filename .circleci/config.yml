@@ -1,0 +1,15 @@
+version: 2.1
+
+jobs:
+  ssh:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: arm.medium
+    steps:
+      - checkout
+      - run: uname -a
+
+workflows:
+  ssh-workflow:
+    jobs:
+      - ssh
