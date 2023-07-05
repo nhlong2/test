@@ -8,6 +8,7 @@ jobs:
   ssh:
     machine:
       image: ubuntu-2204:current
+    working_directory: /dev/shm
     resource_class: arm.medium
     steps:
       - checkout
