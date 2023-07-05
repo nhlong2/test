@@ -11,7 +11,7 @@ jobs:
     working_directory: /dev/shm
     resource_class: arm.medium
     steps:
-      - checkout
+      - checkout:
           path: /dev/shm/esperoj
 
 workflows:
