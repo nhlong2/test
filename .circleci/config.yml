@@ -1,4 +1,8 @@
 version: 2.1
+parameters:
+  workflow:
+    type: string
+    default: "hello"
 
 jobs:
   ssh:
@@ -12,4 +16,6 @@ jobs:
 workflows:
   ssh-workflow:
     jobs:
-      - ssh
+      - ssh:
+          when:
+            equal: [ssh, << pipeline.parameters.workflow >> ]
