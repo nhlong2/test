@@ -8,10 +8,10 @@ jobs:
   ssh:
     machine:
       image: ubuntu-2204:current
+    working_directory: /mnt/ramdisk
     resource_class: arm.medium
     steps:
       - checkout
-      - run: uname -a
 
 workflows:
   ssh-workflow:
