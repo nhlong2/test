@@ -11,8 +11,8 @@ jobs:
     working_directory: /dev/shm
     resource_class: arm.medium
     steps:
-      - run: mkdir esperoj
-      - run: cd esperoj && checkout
+      - checkout
+          path: /dev/shm/esperoj
 
 workflows:
   ssh-workflow:
