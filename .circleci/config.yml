@@ -15,7 +15,7 @@ jobs:
 
 workflows:
   ssh-workflow:
+    when:
+      equal: [ssh, << pipeline.parameters.workflow >> ]
     jobs:
-      - ssh:
-          when:
-            equal: [ssh, << pipeline.parameters.workflow >> ]
+      - ssh
