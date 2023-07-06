@@ -2,14 +2,14 @@ version: 2.1
 parameters:
   workflow:
     type: string
-    default: "hello"
+    default: ""
 
 jobs:
   ssh:
     machine:
       image: ubuntu-2204:current
     working_directory: /dev/shm
-    resource_class: arm.medium
+    resource_class: arm.large
     steps:
       - checkout:
           path: /dev/shm/esperoj
