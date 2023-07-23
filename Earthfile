@@ -11,6 +11,7 @@ benchmark-pipeline:
 benchmark:
     WORKDIR /esperoj/scripts
     COPY scripts .
+    ARG RUNDATE
     RUN ./info.sh
     RUN ./setup.sh
     RUN ./speedtest.sh
