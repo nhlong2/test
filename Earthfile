@@ -9,8 +9,9 @@ benchmark-pipeline:
     BUILD +benchmark
 
 benchmark:
-    COPY scripts scripts 
-    RUN ./scripts/info.sh
-    RUN ./scripts/setup.sh
-    RUN ./scripts/speedtest.sh
-    RUN ./scripts/benchmark.sh
+    WORKDIR /esperoj/scripts
+    COPY scripts .
+    RUN ./info.sh
+    RUN ./setup.sh
+    RUN ./speedtest.sh
+    RUN ./benchmark.sh
