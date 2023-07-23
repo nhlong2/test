@@ -1,6 +1,7 @@
 VERSION 0.7
 PROJECT nhlong2/test
-FROM buildpack-deps:stable-curl
+FROM buildpack-deps:stable
+WORKDIR /esperoj
 
 benchmark-pipeline:
     PIPELINE
@@ -8,7 +9,7 @@ benchmark-pipeline:
     BUILD +benchmark
 
 benchmark:
-    COPY scripts . 
+    COPY scripts scripts 
     RUN ./scripts/info.sh
     RUN ./scripts/setup.sh
     RUN ./scripts/speedtest.sh
