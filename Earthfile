@@ -6,13 +6,13 @@ WORKDIR /esperoj
 benchmark-pipeline:
     PIPELINE
     TRIGGER manual
-    ARG date
+    ARG date=$( date )
     BUILD +benchmark --date="${date}"
 
 benchmark:
-    COPY --dir scripts .
-    WORKDIR scripts
+    COPY scripts/setup.sh .
     RUN ./setup.sh
+    COPY scripts .
     ARG date
     RUN ./info.sh
     RUN ./speedtest.sh
