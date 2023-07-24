@@ -6,13 +6,10 @@ WORKDIR /esperoj
 benchmark-pipeline:
     PIPELINE
     TRIGGER manual
-    BUILD +benchmark
-
-benchmark:
-    WORKDIR /esperoj/scripts
-    COPY scripts .
-    ARG RUNDATE
-    RUN ./info.sh
+    COPY --dir scripts .
+    WORKDIR scripts
     RUN ./setup.sh
+    ARG date
+    RUN ./info.sh
     RUN ./speedtest.sh
     RUN ./benchmark.sh
