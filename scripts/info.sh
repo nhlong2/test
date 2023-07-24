@@ -1,5 +1,4 @@
-#!/bin/bash -e
-
+#!/bin/bash
 echo "env"
 env
 echo "curl -s https://ipwho.de"

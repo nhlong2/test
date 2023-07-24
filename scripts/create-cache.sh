@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 if test -f test.bin; then
 	rm test.bin
 fi
