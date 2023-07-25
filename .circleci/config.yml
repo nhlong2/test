@@ -13,7 +13,7 @@ jobs:
       - checkout
   benchmark:
     docker:
-      image: buildpack-deps:stable
+      - image: buildpack-deps:stable
     resource_class: arm.large
     working_directory: ~/scripts
     steps:
