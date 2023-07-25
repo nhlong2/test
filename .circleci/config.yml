@@ -20,7 +20,9 @@ jobs:
       - run: ./scripts/setup.sh
       - run: ./scripts/info.sh
       - run: ./scripts/speedtest.sh
-      - run: ./scripts/benchmark.sh
+      - run:
+          command: ./scripts/benchmark.sh
+          no_output_timeout: 30m
 
 workflows:
   ssh-workflow:
