@@ -15,14 +15,12 @@ jobs:
     docker:
       - image: buildpack-deps:stable
     resource_class: arm.large
-    working_directory: ~/scripts
     steps:
-      - checkout:
-          path: ~
-      - run: ./setup.sh
-      - run: ./info.sh
-      - run: ./speedtest.sh
-      - run: ./benchmark.sh
+      - checkout
+      - run: ./scripts/setup.sh
+      - run: ./scripts/info.sh
+      - run: ./scripts/speedtest.sh
+      - run: ./scripts/benchmark.sh
 
 workflows:
   ssh-workflow:
