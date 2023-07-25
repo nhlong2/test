@@ -8,11 +8,21 @@ jobs:
   ssh:
     machine:
       image: ubuntu-2204:current
-    working_directory: /dev/shm
     resource_class: arm.large
     steps:
+      - checkout
+  benchmark:
+    docker:
+      image: buildpack-deps:stable
+    resource_class: arm.large
+    working_directory: ~/scripts
+    steps:
       - checkout:
-          path: /dev/shm/esperoj
+          path: ~
+      - run: ./setup.sh
+      - run: ./info.sh
+      - run: ./speedtest.sh
+      - run: ./benchmark.sh
 
 workflows:
   ssh-workflow:
@@ -20,3 +30,8 @@ workflows:
       equal: [ssh, << pipeline.parameters.workflow >> ]
     jobs:
       - ssh
+  benchmark-workflow:
+    when:
+      equal: [benchmark, << pipeline.parameters.workflow >> ]
+    jobs:
+      - benchmark
