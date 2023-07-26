@@ -1,6 +1,9 @@
 name: Benchmark
 run-name: Benchmark
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'
 jobs:
   Benchmark:
     runs-on: ubuntu-latest

@@ -12,16 +12,16 @@ jobs:
     steps:
       - checkout
   benchmark:
-    docker:
-      - image: buildpack-deps:stable
+    machine:
+      image: ubuntu-2204:current
+      docker_layer_caching: true
     resource_class: arm.large
     steps:
       - checkout
-      - run: ./scripts/setup.sh
-      - run: ./scripts/info.sh
-      - run: cd scripts && ./speedtest.sh
+      - run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.7.12/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+      - run: earthly --ci +benchmark
       - run:
-          command: ./scripts/benchmark.sh
+          command: .earthly --ci +benchmark
           no_output_timeout: 30m
 
 workflows:
