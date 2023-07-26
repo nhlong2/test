@@ -5,7 +5,7 @@ jobs:
   Benchmark:
     runs-on: ubuntu-latest
     container:
-      image: buildpack-deps:stable
+      image: buildpack-deps:stable-curl
     timeout-minutes: 60
     steps:
       - name: Check out repository code
