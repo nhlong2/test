@@ -23,10 +23,16 @@ jobs:
           key: ${{ runner.os }}-benchmark-${{ hashFiles('benchmatk.dockerfile') }}
           restore-keys: |
             ${{ runner.os }}-benchmark-
+      - name: Setup buildx
+        run: |
+          docker buildx create \
+          --name container \
+          --driver=docker-container \
+          --use --bootstrap
       -
         name: Benchmark
         run: |
-          docker buildx build -f benchmark.dockerfile \
+          docker buildx build --load --builder container -f benchmark.dockerfile \
           -t benchmark:latest \
           --build-arg="DATE='$(date)'" \
           --cache-from='type=local,src=/tmp/.buildx-cache' \
