@@ -3,7 +3,7 @@ WORKDIR /esperoj
 COPY scripts/setup.sh .
 RUN ./setup.sh
 COPY scripts .
-# ARG date=$(date)
+ARG date=$(date)
 RUN ./info.sh
-# RUN ./speedtest.sh
-# RUN ./benchmark.sh
+RUN ./speedtest.sh
+RUN ./benchmark.sh
