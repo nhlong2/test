@@ -1,9 +1,9 @@
-FROM buildpack-deps:stable
+FROM cimg/base:current
 WORKDIR /esperoj
 COPY scripts/setup.sh .
-RUN ./setup.sh
+RUN sudo ./setup.sh
 COPY scripts .
-ARG date=$(date)
+ARG DATE
 RUN ./info.sh
 RUN ./speedtest.sh
 RUN ./benchmark.sh
