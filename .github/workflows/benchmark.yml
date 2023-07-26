@@ -5,12 +5,12 @@ jobs:
   Benchmark:
     runs-on: ubuntu-latest
     container:
-      image: buildpack-deps:stable-curl
+      image: buildpack-deps:stable
     timeout-minutes: 60
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: ./scripts/info.sh
       - run: ./scripts/setup.sh
-      - run: ./scripts/speedtest.sh
+      - run: cd scripts && ./speedtest.sh
       - run: ./scripts/benchmark.sh
