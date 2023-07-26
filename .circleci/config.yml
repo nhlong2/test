@@ -13,13 +13,13 @@ jobs:
       - checkout
   benchmark:
     docker:
-      - image: buildpack-deps:stable-curl
+      - image: buildpack-deps:stable
     resource_class: arm.large
     steps:
       - checkout
       - run: ./scripts/setup.sh
       - run: ./scripts/info.sh
-      - run: ./scripts/speedtest.sh
+      - run: cd scripts && ./speedtest.sh
       - run:
           command: ./scripts/benchmark.sh
           no_output_timeout: 30m
