@@ -13,7 +13,7 @@ jobs:
       - checkout
   benchmark:
     docker:
-      - image: buildpack-deps:stable
+      - image: buildpack-deps:stable-curl
     resource_class: arm.large
     steps:
       - checkout
