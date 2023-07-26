@@ -18,7 +18,7 @@ jobs:
     resource_class: arm.large
     steps:
       - checkout
-      - run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.7.12/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+      - run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.7.12/earthly-linux-arm64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
       - run:
           command: earthly --ci +benchmark
           no_output_timeout: 45m
