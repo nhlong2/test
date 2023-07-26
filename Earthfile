@@ -8,5 +8,6 @@ benchmark:
     COPY scripts .
     # ARG date=$(date)
     RUN ./info.sh
+    SAVE IMAGE benchmark:latest
     # RUN ./speedtest.sh
     # RUN ./benchmark.sh
