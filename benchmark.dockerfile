@@ -6,6 +6,7 @@ ARG DATE
 RUN ls -a /var/cache/apt
 RUN --mount=type=cache,target=/var/cache/apt ls -a /var/cache/apt
 RUN --mount=type=cache,target=/var/cache/apt ./setup.sh
+RUN --mount=type=cache,target=/var/cache/apt ls -a /var/cache/apt
 COPY scripts .
 #ARG DATE
 #RUN ./info.sh
