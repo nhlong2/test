@@ -26,7 +26,7 @@ jobs:
       -
         name: Benchmark
         run: |
-          docker build -f benchmark.dockerfile \
+          docker buildx build -f benchmark.dockerfile \
           -t benchmark:latest \
           --build-arg="DATE='$(date)'" \
           --cache-from='type=local,src=/tmp/.buildx-cache' \
