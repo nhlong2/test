@@ -1,4 +1,4 @@
-FROM cimg/base:current
+FROM buildpack-deps:stable
 WORKDIR /esperoj
 COPY scripts/setup.sh .
 RUN sudo ./setup.sh
