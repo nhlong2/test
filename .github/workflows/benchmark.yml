@@ -20,7 +20,7 @@ jobs:
         uses: buildjet/cache@v3 
         with:
           path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-benchmark-${{ hashFiles('benchmatk.dockerfile') }}
+          key: ${{ runner.os }}-benchmark-${{ hashFiles('benchmark.dockerfile') }}
           restore-keys: |
             ${{ runner.os }}-benchmark-
       -
