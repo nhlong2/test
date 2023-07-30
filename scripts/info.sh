@@ -1,3 +1,3 @@
 #!/bin/bash
-echo "curl -s https://ipwho.de"
+set -x
 curl -s https://ipwho.de

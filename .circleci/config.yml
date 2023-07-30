@@ -19,7 +19,7 @@ jobs:
     steps:
       - checkout
       - run:
-        command: docker build -f benchmark.dockerfile -t benchmark:latest --build-arg="DATE='$(date)'" .
+          command: docker build -f Dockerfile.benchmark -t benchmark:latest --build-arg="DATE='$(date)'" .
           no_output_timeout: 45m
 
 workflows:
