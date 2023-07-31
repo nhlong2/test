@@ -1,8 +1,6 @@
-FROM buildpack-deps:bullseye
-WORKDIR /esperoj
-RUN rm -f /etc/apt/apt.conf.d/docker-clean
+FROM buildpack-deps:stable
 COPY scripts/setup.sh .
-RUN --mount=type=cache,target=/var/cache/apt ./setup.sh
+RUN ./setup.sh
 COPY scripts .
 ARG DATE
 RUN ./info.sh
