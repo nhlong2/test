@@ -12,18 +12,13 @@ jobs:
     steps:
       - checkout
   benchmark:
-    machine:
-      image: ubuntu-2204:current
-      docker_layer_caching: true
+    docker:
+      - image: buildpack-deps:stable
     resource_class: arm.large
     steps:
       - checkout
       - run:
-          command: |
-            docker build \
-              --file Dockerfile.benchmark \
-              --build-arg="DATE='$(date)'" \
-              .
+          command: env PATH="$(pwd)/scripts:${PATH}" ./scripts/benchmark.sh
           no_output_timeout: 45m
 
 workflows:
