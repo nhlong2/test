@@ -7,8 +7,8 @@ on:
 jobs:
   Benchmark:
     runs-on: ubuntu-latest
-    container: buildpack-deps:stable
-      image: 
+    container:
+      image: buildpack-deps:stable
     timeout-minutes: 60
     steps:
       -
