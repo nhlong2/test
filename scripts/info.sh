@@ -1,3 +1,3 @@
 #!/bin/bash
-set -x
+set -ex
 curl -s https://ipwho.de

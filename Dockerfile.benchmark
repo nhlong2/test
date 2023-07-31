@@ -1,8 +1,6 @@
 FROM buildpack-deps:stable
-COPY scripts/setup.sh .
-RUN ./setup.sh
+WORKDIR /workdir
+ENV PATH="/workdir:${PATH}"
 COPY scripts .
 ARG DATE
-RUN ./info.sh
-RUN ./speedtest.sh
 RUN ./benchmark.sh
