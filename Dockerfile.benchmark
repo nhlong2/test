@@ -1,4 +1,4 @@
-FROM buildpack-deps:stable
+FROM buildpack-deps:bullseye
 WORKDIR /esperoj
 RUN rm -f /etc/apt/apt.conf.d/docker-clean
 COPY scripts/setup.sh .
