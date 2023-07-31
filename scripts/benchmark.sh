@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+set -exo pipefail
 info.sh
 network-speed.sh
 yabs.sh

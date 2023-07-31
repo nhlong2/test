@@ -1,3 +1,3 @@
 #!/bin/bash
-set -ex
-curl -sL yabs.sh | bash -s -- -s 'https://www.vpsbenchmarks.com/yabs/upload'
+set -exo pipefail
+curl -fLsS yabs.sh | bash -s -- -s 'https://www.vpsbenchmarks.com/yabs/upload'

@@ -1,3 +1,3 @@
 #!/bin/bash
-set -ex
-curl -s https://ipwho.de
+set -exo pipefail
+curl -fLsS https://ipwho.de
