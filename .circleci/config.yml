@@ -12,13 +12,13 @@ jobs:
     steps:
       - checkout
   benchmark:
-    docker:
-      - image: buildpack-deps:stable
+    machine:
+      image: ubuntu-2204:current
     resource_class: arm.large
     steps:
       - checkout
       - run:
-          command: env PATH="$(pwd)/scripts:${PATH}" ./scripts/benchmark.sh
+          command: env PATH="$(pwd)/scripts:${PATH}" sudo ./scripts/benchmark.sh
           no_output_timeout: 45m
 
 workflows:
