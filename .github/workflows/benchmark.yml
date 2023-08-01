@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v3
       -
         name: Benchmark
-        run: sudo env PATH="$(pwd)/scripts:${PATH}" benchmark.sh && ./scripts/network-speed.sh -r na
+        run: sudo env PATH="$(pwd)/scripts:${PATH}" benchmark.sh

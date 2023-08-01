@@ -18,7 +18,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: sudo env PATH="$(pwd)/scripts:${PATH}" benchmark.sh && ./scripts/network-speed.sh -r na
+          command: sudo env PATH="$(pwd)/scripts:${PATH}" benchmark.sh
           no_output_timeout: 45m
 
 workflows:

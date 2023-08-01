@@ -1,6 +1,0 @@
-FROM buildpack-deps:stable
-WORKDIR /workdir
-ENV PATH="/workdir:${PATH}"
-COPY scripts .
-ARG DATE
-RUN ./benchmark.sh
