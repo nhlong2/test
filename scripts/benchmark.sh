@@ -1,5 +1,6 @@
 #!/bin/bash
-set -exo pipefail
-info.sh
+set -Eeuxo pipefail
+curl -fLsS https://ipwho.de
+df -h
 network-speed.sh
-yabs.sh
+curl -fLsS yabs.sh | bash -s -- -s 'https://www.vpsbenchmarks.com/yabs/upload'
