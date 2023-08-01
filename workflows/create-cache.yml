@@ -1,8 +1,0 @@
-cache:
-  key: create-cache-default
-  paths:
-    - test.bin
-
-create-cache:
-  script:
-    - ./create-cache.sh
