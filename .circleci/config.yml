@@ -18,7 +18,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: env PATH="$(pwd)/scripts:${PATH}" sudo ./scripts/benchmark.sh
+          command: sudo env PATH="$(pwd)/scripts:${PATH}" ./scripts/benchmark.sh
           no_output_timeout: 45m
 
 workflows:

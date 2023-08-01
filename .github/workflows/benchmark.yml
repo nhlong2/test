@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v3
       -
         name: Benchmark
-        run: env PATH="$(pwd)/scripts:${PATH}" sudo ./scripts/benchmark.sh
+        run: sudo env PATH="$(pwd)/scripts:${PATH}" ./scripts/benchmark.sh
