@@ -8,13 +8,13 @@ jobs:
   ssh:
     machine:
       image: ubuntu-2204:current
-    resource_class: medium
+    resource_class: large
     steps:
       - checkout
   benchmark:
     machine:
       image: ubuntu-2204:current
-    resource_class: medium
+    resource_class: large
     steps:
       - checkout
       - run:
