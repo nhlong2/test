@@ -24,13 +24,13 @@ jobs:
 workflows:
   ssh-workflow:
     when:
-      equal: [ssh, << pipeline.parameters.workflow >> ]
+      or:
+        - equal: [ssh, << pipeline.parameters.workflow >> ]
+        - equal: [main, << pipeline.git.branch >> ]
     jobs:
       - ssh
   benchmark-workflow:
     when:
-      or:
-        - equal: [benchmark, << pipeline.parameters.workflow >> ]
-        - equal: [main, << pipeline.git.branch >> ]
+      equal: [benchmark, << pipeline.parameters.workflow >> ]
     jobs:
       - benchmark
