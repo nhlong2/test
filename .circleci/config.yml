@@ -12,9 +12,9 @@ jobs:
     steps:
       - checkout
   benchmark:
-    machine:
-      image: ubuntu-2204:current
-    resource_class: large
+    docker:
+      - image: cimg/base:current
+    resource_class: small
     steps:
       - checkout
       - run:
