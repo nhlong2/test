@@ -14,11 +14,11 @@ jobs:
   benchmark:
     machine:
       image: ubuntu-2204:current
-    resource_class: arm.large
+    resource_class: medium
     steps:
       - checkout
       - run:
-          command: sudo env PATH="$(pwd)/scripts:${PATH}" benchmark.sh
+          command: export PATH="$(pwd)/scripts:${PATH}" && sudo -E benchmark.sh
           no_output_timeout: 45m
 
 workflows:
