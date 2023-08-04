@@ -8,7 +8,7 @@ jobs:
   ssh:
     machine:
       image: ubuntu-2204:current
-    resource_class: arm.large
+    resource_class: medium
     steps:
       - checkout
   benchmark:
@@ -18,7 +18,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: export PATH="$(pwd)/scripts:${PATH}" && sudo -E benchmark.sh
+          command: sudo -E env PATH="$(pwd)/scripts:${PATH}" benchmark.sh
           no_output_timeout: 45m
 
 workflows:
