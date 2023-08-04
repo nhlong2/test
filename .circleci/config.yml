@@ -11,6 +11,7 @@ jobs:
     resource_class: large
     steps:
       - checkout
+      - run: apt-get -qqy update && sudo apt-get install -qqy mosh
   benchmark:
     machine:
       image: ubuntu-2204:current
